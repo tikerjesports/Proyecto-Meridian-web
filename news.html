@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias | Meridian Circuit</title>
+    <meta name="description" content="Últimas noticias y actualizaciones del circuito Meridian, extraídas oficialmente de X/Twitter.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="news-page">
+    
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><ion-icon name="game-controller-outline"></ion-icon></span>
+                MERIDIAN
+            </a>
+            
+            <button class="mobile-toggle" aria-label="Abrir menú">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="competitions.html">Competiciones</a></li>
+                <li><a href="rankings.html">Clasificaciones</a></li>
+                <li><a href="news.html" class="active">Noticias</a></li>
+                <li><a href="register.html" class="nav-btn">Registro</a></li>
+                <li><a href="index.html#social">Social</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header pattern-bg">
+        <div class="container">
+            <h1 class="page-title fade-in">Últimas <span class="text-accent">Noticias</span></h1>
+            <p class="page-desc fade-in" style="--delay: 0.1s">Desarrollos, anuncios y actualidad del circuito traídos directamente desde X.</p>
+        </div>
+    </header>
+
+    <!-- Detailed Featured News / Twitter Grid Section -->
+    <section class="section news-detailed-section">
+        <div class="container">
+            
+            <!-- Featured Announcement -->
+            <div class="featured-news fade-in">
+                <div class="featured-news-content">
+                    <span class="news-tag highlight-tag">Anuncio Oficial</span>
+                    <h2 class="featured-title">¡Bienvenidos a la Season 2026 del Circuito Meridian!</h2>
+                    <p class="featured-excerpt">Estamos inmensamente orgullosos de anunciar la apertura de registros para la nueva temporada competitiva. Preparamos formatos renovados, nuevas ligas (Contenders y Test Series), y una bolsa de premios en la Meridian Cup sin precedentes. ¡Reúne a tu equipo!</p>
+                    
+                    <div class="news-meta-large">
+                        <span class="date"><ion-icon name="calendar-outline"></ion-icon> 08 Marzo, 2026</span>
+                        <a href="https://x.com/Meridiancircuit" target="_blank" class="btn btn-primary btn-sm">Leer Anuncio Completo <ion-icon name="open-outline"></ion-icon></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header fade-in">
+                <h3 class="section-title" style="font-size: 1.5rem;">Feed de @Meridiancircuit</h3>
+            </div>
+
+            <!-- Twitter Cards Grid -->
+            <div class="news-grid">
+                
+                <!-- Card 1 -->
+                <article class="news-card fade-in twitter-card" style="--delay: 0.1s">
+                    <div class="tweet-header">
+                        <div class="tweet-author">
+                            <div class="author-avatar"><ion-icon name="game-controller"></ion-icon></div>
+                            <div class="author-info">
+                                <span class="author-name">Meridian Circuit</span>
+                                <span class="author-handle">@Meridiancircuit</span>
+                            </div>
+                        </div>
+                        <ion-icon name="logo-twitter" class="twitter-icon"></ion-icon>
+                    </div>
+                    <div class="tweet-content">
+                        <h4 class="tweet-title">Inscripciones Abiertas</h4>
+                        <p class="tweet-excerpt">El formulario de registro ya se encuentra operativo en nuestra web oficial. Asegurad vuestro slot antes del próximo viernes 15. Primer evento: Community Brawl en abril. 🔥</p>
+                    </div>
+                    <div class="tweet-footer">
+                        <span class="tweet-date">07 Mar 2026</span>
+                        <a href="https://x.com/Meridiancircuit" target="_blank" class="btn btn-outline btn-sm">Ver Publicación</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="news-card fade-in twitter-card" style="--delay: 0.2s">
+                    <div class="tweet-header">
+                        <div class="tweet-author">
+                            <div class="author-avatar"><ion-icon name="game-controller"></ion-icon></div>
+                            <div class="author-info">
+                                <span class="author-name">Meridian Circuit</span>
+                                <span class="author-handle">@Meridiancircuit</span>
+                            </div>
+                        </div>
+                        <ion-icon name="logo-twitter" class="twitter-icon"></ion-icon>
+                    </div>
+                    <div class="tweet-content">
+                        <h4 class="tweet-title">Resumen de la Temporada</h4>
+                        <p class="tweet-excerpt">¡Qué gran final nos han deparado Frostbite AC y Liquid Force! Enhorabuena a los campeones que ascienden directos a la Cup. GG WP a todos los participantes de Contenders.</p>
+                    </div>
+                    <div class="tweet-footer">
+                        <span class="tweet-date">02 Mar 2026</span>
+                        <a href="https://x.com/Meridiancircuit" target="_blank" class="btn btn-outline btn-sm">Ver Publicación</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="news-card fade-in twitter-card" style="--delay: 0.3s">
+                    <div class="tweet-header">
+                        <div class="tweet-author">
+                            <div class="author-avatar"><ion-icon name="game-controller"></ion-icon></div>
+                            <div class="author-info">
+                                <span class="author-name">Meridian Circuit</span>
+                                <span class="author-handle">@Meridiancircuit</span>
+                            </div>
+                        </div>
+                        <ion-icon name="logo-twitter" class="twitter-icon"></ion-icon>
+                    </div>
+                    <div class="tweet-content">
+                        <h4 class="tweet-title">¡Mantenimiento Programado!</h4>
+                        <p class="tweet-excerpt">Nuestros servidores de práctica estarán fuera de servicio esta madrugada durante una hora para aplicar el nuevo parche de CS2. Disculpen las molestias. 🛠️</p>
+                    </div>
+                    <div class="tweet-footer">
+                        <span class="tweet-date">28 Feb 2026</span>
+                        <a href="https://x.com/Meridiancircuit" target="_blank" class="btn btn-outline btn-sm">Ver Publicación</a>
+                    </div>
+                </article>
+
+                 <!-- Card 4 -->
+                 <article class="news-card fade-in twitter-card" style="--delay: 0.4s">
+                    <div class="tweet-header">
+                        <div class="tweet-author">
+                            <div class="author-avatar"><ion-icon name="game-controller"></ion-icon></div>
+                            <div class="author-info">
+                                <span class="author-name">Meridian Circuit</span>
+                                <span class="author-handle">@Meridiancircuit</span>
+                            </div>
+                        </div>
+                        <ion-icon name="logo-twitter" class="twitter-icon"></ion-icon>
+                    </div>
+                    <div class="tweet-content">
+                        <h4 class="tweet-title">Reglamento Actualizado (V2.1)</h4>
+                        <p class="tweet-excerpt">Atención equipos: Hemos clarificado la normativa respecto a substitutos de emergencia en formato BO3. Por favor, revisad el documento oficial en el canal de Discord.</p>
+                    </div>
+                    <div class="tweet-footer">
+                        <span class="tweet-date">15 Feb 2026</span>
+                        <a href="https://x.com/Meridiancircuit" target="_blank" class="btn btn-outline btn-sm">Ver Publicación</a>
+                    </div>
+                </article>
+
+            </div>
+            
+            <div class="twitter-cta text-center fade-in" style="margin-top: 4rem;">
+                <a href="https://x.com/Meridiancircuit" target="_blank" class="btn btn-primary">
+                    <span class="btn-glow"></span>
+                    <span class="btn-content"><ion-icon name="logo-twitter"></ion-icon> Seguir en X</span>
+                </a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <span class="logo-icon"><ion-icon name="game-controller-outline"></ion-icon></span>
+                MERIDIAN
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-contact">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <a href="mailto:meridian@ivexy.com">meridian@ivexy.com</a>
+                </div>
+                
+                <div class="footer-copyright">
+                    <p>Copyright &copy; 2026 Meridian</p>
+                    <p class="text-muted">Perteneciente al grupo Ivexy &copy;</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

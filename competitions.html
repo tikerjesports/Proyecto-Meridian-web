@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competiciones | Meridian Circuit</title>
+    <meta name="description" content="Explora todas las competiciones del circuito Meridian: Cup, Contenders y Test Series.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="comps-page">
+    
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><ion-icon name="game-controller-outline"></ion-icon></span>
+                MERIDIAN
+            </a>
+            
+            <button class="mobile-toggle" aria-label="Abrir menú">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="competitions.html" class="active">Competiciones</a></li>
+                <li><a href="rankings.html">Clasificaciones</a></li>
+                <li><a href="news.html">Noticias</a></li>
+                <li><a href="register.html" class="nav-btn">Registro</a></li>
+                <li><a href="index.html#social">Social</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header pattern-bg">
+        <div class="container">
+            <h1 class="page-title fade-in">Nuestras <span class="text-accent">Competiciones</span></h1>
+            <p class="page-desc fade-in" style="--delay: 0.1s">Encuentra los torneos activos, próximos y finalizados del circuito Meridian.</p>
+        </div>
+    </header>
+
+    <!-- Meridian Cup Section -->
+    <section class="section tier-section cup-section">
+        <div class="container">
+            <div class="tier-header fade-in">
+                <div class="tier-badge-large premium-badge">
+                    <ion-icon name="trophy-outline"></ion-icon> Meridian Cup
+                </div>
+                <h2>El nivel más alto de competición</h2>
+            </div>
+            
+            <div class="comps-list">
+                <!-- Card -->
+                <div class="comp-card fade-in premium-card" style="--delay: 0.1s">
+                    <div class="comp-status status-live">En Directo</div>
+                    <div class="comp-main">
+                        <h3 class="comp-title">Spring Clash 2026 - Playoffs</h3>
+                        <div class="comp-details">
+                            <span class="detail-item"><ion-icon name="game-controller-outline"></ion-icon> BO3</span>
+                            <span class="detail-item"><ion-icon name="calendar-outline"></ion-icon> 28 Abr - 30 Abr</span>
+                            <span class="detail-item"><ion-icon name="people-outline"></ion-icon> 8 Equipos</span>
+                        </div>
+                    </div>
+                    <div class="comp-action">
+                        <a href="#" class="btn btn-outline btn-sm">Ver Torneo</a>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div class="comp-card fade-in premium-card" style="--delay: 0.2s">
+                    <div class="comp-status status-upcoming">Próximamente</div>
+                    <div class="comp-main">
+                        <h3 class="comp-title">Summer Major 2026 - Clasificatorio Cerrado</h3>
+                        <div class="comp-details">
+                            <span class="detail-item"><ion-icon name="game-controller-outline"></ion-icon> BO3</span>
+                            <span class="detail-item"><ion-icon name="calendar-outline"></ion-icon> 15 Jul - 20 Jul</span>
+                            <span class="detail-item"><ion-icon name="people-outline"></ion-icon> 16 Equipos</span>
+                        </div>
+                    </div>
+                    <div class="comp-action">
+                        <a href="#" class="btn btn-outline btn-sm">Ver Torneo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meridian Contenders Section -->
+    <section class="section tier-section contenders-section bg-alternate">
+        <div class="container">
+            <div class="tier-header fade-in">
+                <div class="tier-badge-large contenders-badge">
+                    <ion-icon name="flash-outline"></ion-icon> Meridian Contenders
+                </div>
+                <h2>Asciende a la máxima categoría</h2>
+            </div>
+            
+            <div class="comps-list">
+                <!-- Card -->
+                <div class="comp-card fade-in contenders-card" style="--delay: 0.1s">
+                    <div class="comp-status status-upcoming">Próximamente</div>
+                    <div class="comp-main">
+                        <h3 class="comp-title">Contenders League Season 4</h3>
+                        <div class="comp-details">
+                            <span class="detail-item"><ion-icon name="game-controller-outline"></ion-icon> BO2 / BO3</span>
+                            <span class="detail-item"><ion-icon name="calendar-outline"></ion-icon> 10 May - 15 Jun</span>
+                            <span class="detail-item"><ion-icon name="people-outline"></ion-icon> 32 Equipos</span>
+                        </div>
+                    </div>
+                    <div class="comp-action">
+                        <a href="#" class="btn btn-outline btn-sm">Ver Torneo</a>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div class="comp-card fade-in contenders-card" style="--delay: 0.2s">
+                    <div class="comp-status status-finished">Finalizado</div>
+                    <div class="comp-main">
+                        <h3 class="comp-title">Open Qualifier #2 - Spring</h3>
+                        <div class="comp-details">
+                            <span class="detail-item"><ion-icon name="game-controller-outline"></ion-icon> BO1</span>
+                            <span class="detail-item"><ion-icon name="calendar-outline"></ion-icon> 22 Mar - 24 Mar</span>
+                            <span class="detail-item"><ion-icon name="people-outline"></ion-icon> 32 Equipos</span>
+                        </div>
+                    </div>
+                    <div class="comp-action">
+                        <a href="#" class="btn btn-outline btn-sm">Ver Torneo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meridian Test Series Section -->
+    <section class="section tier-section test-section">
+        <div class="container">
+            <div class="tier-header fade-in">
+                <div class="tier-badge-large test-badge">
+                    <ion-icon name="shield-half-outline"></ion-icon> Meridian Test Series
+                </div>
+                <h2>Demuestra el potencial de tu equipo</h2>
+            </div>
+            
+            <div class="comps-list">
+                <!-- Card -->
+                <div class="comp-card fade-in test-card" style="--delay: 0.1s">
+                    <div class="comp-status status-upcoming">Próximamente</div>
+                    <div class="comp-main">
+                        <h3 class="comp-title">Community Brawl April</h3>
+                        <div class="comp-details">
+                            <span class="detail-item"><ion-icon name="game-controller-outline"></ion-icon> BO1</span>
+                            <span class="detail-item"><ion-icon name="calendar-outline"></ion-icon> 10 Abr - 12 Abr</span>
+                            <span class="detail-item"><ion-icon name="people-outline"></ion-icon> 128 Equipos</span>
+                        </div>
+                    </div>
+                    <div class="comp-action">
+                        <a href="#" class="btn btn-outline btn-sm">Ver Torneo</a>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div class="comp-card fade-in test-card" style="--delay: 0.2s">
+                    <div class="comp-status status-finished">Finalizado</div>
+                    <div class="comp-main">
+                        <h3 class="comp-title">Community Brawl March</h3>
+                        <div class="comp-details">
+                            <span class="detail-item"><ion-icon name="game-controller-outline"></ion-icon> BO1</span>
+                            <span class="detail-item"><ion-icon name="calendar-outline"></ion-icon> 15 Mar - 16 Mar</span>
+                            <span class="detail-item"><ion-icon name="people-outline"></ion-icon> 64 Equipos</span>
+                        </div>
+                    </div>
+                    <div class="comp-action">
+                        <a href="#" class="btn btn-outline btn-sm">Ver Torneo</a>
+                    </div>
+                </div>
+                
+                <!-- Card -->
+                <div class="comp-card fade-in test-card" style="--delay: 0.3s">
+                    <div class="comp-status status-finished">Finalizado</div>
+                    <div class="comp-main">
+                        <h3 class="comp-title">Weekend Skirmish #5</h3>
+                        <div class="comp-details">
+                            <span class="detail-item"><ion-icon name="game-controller-outline"></ion-icon> BO1</span>
+                            <span class="detail-item"><ion-icon name="calendar-outline"></ion-icon> 01 Mar - 02 Mar</span>
+                            <span class="detail-item"><ion-icon name="people-outline"></ion-icon> 64 Equipos</span>
+                        </div>
+                    </div>
+                    <div class="comp-action">
+                        <a href="#" class="btn btn-outline btn-sm">Ver Torneo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <span class="logo-icon"><ion-icon name="game-controller-outline"></ion-icon></span>
+                MERIDIAN
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-contact">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <a href="mailto:meridian@ivexy.com">meridian@ivexy.com</a>
+                </div>
+                
+                <div class="footer-copyright">
+                    <p>Copyright &copy; 2026 Meridian</p>
+                    <p class="text-muted">Perteneciente al grupo Ivexy &copy;</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

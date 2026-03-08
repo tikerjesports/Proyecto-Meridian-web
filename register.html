@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción | Meridian Circuit</title>
+    <meta name="description" content="Inscribe a tu equipo en el nuevo circuito competitivo Meridian de Counter Strike.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="register-page">
+    
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><ion-icon name="game-controller-outline"></ion-icon></span>
+                MERIDIAN
+            </a>
+            
+            <button class="mobile-toggle" aria-label="Abrir menú">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="competitions.html">Competiciones</a></li>
+                <li><a href="rankings.html">Clasificaciones</a></li>
+                <li><a href="news.html">Noticias</a></li>
+                <li><a href="register.html" class="active nav-btn">Registro</a></li>
+                <li><a href="index.html#social">Social</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header pattern-bg">
+        <div class="container">
+            <h1 class="page-title fade-in">Inscripción de <span class="text-accent">Equipos</span></h1>
+            <p class="page-desc fade-in" style="--delay: 0.1s">Completa el formulario a continuación para solicitar una plaza en la temporada 2026 del circuito.</p>
+        </div>
+    </header>
+
+    <!-- Registration Form Section -->
+    <section class="section form-section">
+        <div class="container">
+            
+            <div class="form-wrapper fade-in">
+                <form id="teamRegisterForm" class="esports-form">
+                    
+                    <!-- Team Info Group -->
+                    <div class="form-group-section">
+                        <h3 class="form-section-title"><ion-icon name="shield"></ion-icon> Información del Equipo</h3>
+                        
+                        <div class="form-grid">
+                            <div class="input-group full-width">
+                                <label for="teamName">Nombre del Equipo <span class="required">*</span></label>
+                                <input type="text" id="teamName" name="teamName" required placeholder="Ej: Meridian Academy">
+                            </div>
+                            
+                            <div class="input-group full-width">
+                                <label for="teamLogo">Logo del Equipo (Recomendado 500x500 PNG)</label>
+                                <div class="file-upload-wrapper">
+                                    <input type="file" id="teamLogo" name="teamLogo" accept="image/png, image/jpeg">
+                                    <label for="teamLogo" class="file-upload-lbl">
+                                        <ion-icon name="cloud-upload-outline"></ion-icon>
+                                        <span>Seleccionar archivo...</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="country">País / Región Principal <span class="required">*</span></label>
+                                <select id="country" name="country" required>
+                                    <option value="" disabled selected>Selecciona una región</option>
+                                    <option value="es">España</option>
+                                    <option value="pt">Portugal</option>
+                                    <option value="fr">Francia</option>
+                                    <option value="latam">América Latina</option>
+                                    <option value="eu">Otra Región EU</option>
+                                    <option value="intl">Internacional</option>
+                                </select>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label>Categoría Preferida <span class="required">*</span></label>
+                                <div class="radio-group row-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="category" value="cup" required>
+                                        <span class="custom-radio"></span> Meridian Cup
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="category" value="contenders">
+                                        <span class="custom-radio"></span> Contenders
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="category" value="test">
+                                        <span class="custom-radio"></span> Test Series
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Group -->
+                    <div class="form-group-section mt-4">
+                        <h3 class="form-section-title"><ion-icon name="person"></ion-icon> Contacto del Capitán</h3>
+                        
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="captainName">Nombre Completo <span class="required">*</span></label>
+                                <input type="text" id="captainName" name="captainName" required placeholder="Nombre del Capitán">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="captainEmail">Email de Contacto <span class="required">*</span></label>
+                                <input type="email" id="captainEmail" name="captainEmail" required placeholder="capitan@equipo.com">
+                            </div>
+
+                            <div class="input-group full-width">
+                                <label for="captainDiscord">Usuario de Discord <span class="required">*</span></label>
+                                <input type="text" id="captainDiscord" name="captainDiscord" required placeholder="Ej: MeridianPlayer#1234">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Roster Group -->
+                    <div class="form-group-section mt-4">
+                        <h3 class="form-section-title"><ion-icon name="people"></ion-icon> Plantilla (Roster)</h3>
+                        
+                        <div class="input-group full-width">
+                            <label for="roster">Lista de Jugadores (Titulares) <span class="required">*</span></label>
+                            <textarea id="roster" name="roster" rows="4" required placeholder="Introduce un jugador y su SteamID por línea...&#10;Jugador1 (STEAM_0:1:xxxx)&#10;Jugador2 (STEAM_0:1:yyyy)"></textarea>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label for="subs">Suplentes Opcionales (Máximo 2)</label>
+                            <textarea id="subs" name="subs" rows="2" placeholder="Introduce el nombre y SteamID de los suplentes (opcional)..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Extra Group -->
+                    <div class="form-group-section mt-4">
+                        <h3 class="form-section-title"><ion-icon name="chatbox"></ion-icon> Comentarios Adicionales</h3>
+                        
+                        <div class="input-group full-width">
+                            <label for="message">Mensaje para la Administración</label>
+                            <textarea id="message" name="message" rows="3" placeholder="Información sobre logros anteriores, o dudas sobre la liga..."></textarea>
+                        </div>
+                        
+                        <div class="input-group full-width checkbox-wrapper">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span class="custom-checkbox"></span>
+                                He leído y acepto el <a href="#" style="color:var(--accent-primary)">reglamento oficial</a> del circuito.
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Action -->
+                    <div class="form-action text-center mt-5">
+                        <button type="submit" class="btn btn-primary btn-lg submit-btn">
+                            <span class="btn-glow"></span>
+                            <span class="btn-content" id="submitBtnText">Enviar Solicitud</span>
+                            <ion-icon name="checkmark-circle-outline" id="submitSuccessIcon" style="display: none;"></ion-icon>
+                        </button>
+                    </div>
+
+                    <!-- Animated Success State -->
+                    <div id="formSuccessMessage" class="form-success-alert">
+                        <ion-icon name="paper-plane-outline"></ion-icon>
+                        <h4>¡Solicitud Enviada Correctamente!</h4>
+                        <p>Hemos recibido la inscripción de tu equipo. Nos pondremos en contacto con el capitán por correo o Discord en las próximas 48 horas.</p>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <span class="logo-icon"><ion-icon name="game-controller-outline"></ion-icon></span>
+                MERIDIAN
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-contact">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <a href="mailto:meridian@ivexy.com">meridian@ivexy.com</a>
+                </div>
+                
+                <div class="footer-copyright">
+                    <p>Copyright &copy; 2026 Meridian</p>
+                    <p class="text-muted">Perteneciente al grupo Ivexy &copy;</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

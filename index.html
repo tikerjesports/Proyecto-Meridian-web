@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridian - Circuito Competitivo de Counter Strike</title>
+    <meta name="description" content="Meridian es el nuevo circuito competitivo de Counter Strike. Participa en las Meridian Test Series, Contenders y Cup.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><ion-icon name="game-controller-outline"></ion-icon></span>
+                MERIDIAN
+            </a>
+            
+            <button class="mobile-toggle" aria-label="Abrir menú">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="competitions.html">Competiciones</a></li>
+                <li><a href="rankings.html">Clasificaciones</a></li>
+                <li><a href="news.html">Noticias</a></li>
+                <li><a href="register.html" class="nav-btn">Registro</a></li>
+                <li><a href="#social">Social</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="inicio">
+        <div class="particles" id="particles"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-logo-large">
+                <span class="logo-icon-large"><ion-icon name="game-controller-outline"></ion-icon></span>
+                <h1>MERIDIAN</h1>
+            </div>
+            
+            <h2 class="hero-headline">El Nuevo Circuito Competitivo de <span class="text-accent">Counter Strike</span></h2>
+            <p class="hero-subtext">Compite. Asciende. Forma parte del circuito Meridian.</p>
+            
+            <div class="hero-actions">
+                <a href="competitions.html" class="btn btn-primary">
+                    <span class="btn-glow"></span>
+                    <span class="btn-content">Ver Competiciones</span>
+                </a>
+                <a href="#registro" class="btn btn-secondary">Unirse al Circuito</a>
+            </div>
+        </div>
+        <a href="#sobre-meridian" class="scroll-indicator">
+            <ion-icon name="chevron-down-outline"></ion-icon>
+        </a>
+    </header>
+
+    <!-- Second Section: Categories (About Meridian) -->
+    <section class="section categories-section" id="sobre-meridian">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">¿Qué es <span class="text-accent">Meridian</span>?</h2>
+                <p class="section-desc">Meridian es un circuito de torneos de Counter Strike con diferentes niveles competitivos donde los equipos pueden participar, competir y escalar en las clasificaciones.</p>
+            </div>
+            
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <div class="category-card fade-in" style="--delay: 0.1s">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <ion-icon name="shield-half-outline"></ion-icon>
+                    </div>
+                    <h3>Meridian Test Series</h3>
+                    <p>El punto de entrada al circuito. Demuestra el potencial de tu equipo y comienza tu camino hacia la cima.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="category-card fade-in" style="--delay: 0.2s">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <ion-icon name="flash-outline"></ion-icon>
+                    </div>
+                    <h3>Meridian Contenders</h3>
+                    <p>La liga intermedia para equipos establecidos. Competición feroz por un pase a la máxima categoría.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="category-card fade-in" style="--delay: 0.3s">
+                    <div class="card-glow card-glow-premium"></div>
+                    <div class="card-icon icon-premium">
+                        <ion-icon name="trophy-outline"></ion-icon>
+                    </div>
+                    <h3>Meridian Cup</h3>
+                    <p>La cima del circuito. Los mejores equipos europeos combatiendo por la gloria, prestigio y enormes premios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Third Section: Tournaments -->
+    <section class="section tournaments-section" id="competiciones_recientes">
+        <div class="container fade-in">
+            <div class="section-header">
+                <h2 class="section-title">Últimas <span class="text-accent">Competiciones</span></h2>
+                <a href="competitions.html" class="view-all-link">Ver todas <ion-icon name="arrow-forward-outline"></ion-icon></a>
+            </div>
+            
+            <div class="tournament-list">
+                <!-- Tournament Item -->
+                <div class="tourney-item fade-in" style="--delay: 0.1s">
+                    <div class="tourney-indicator premium"></div>
+                    <div class="tourney-info">
+                        <span class="tourney-badge premium-badge">Meridian Cup</span>
+                        <h3 class="tourney-name">Spring Clash 2026</h3>
+                    </div>
+                    <div class="tourney-meta">
+                        <div class="meta-item">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                            <span>15 Abr - 30 Abr</span>
+                        </div>
+                        <div class="meta-item">
+                            <ion-icon name="people-outline"></ion-icon>
+                            <span>16 Equipos</span>
+                        </div>
+                    </div>
+                    <div class="tourney-action">
+                        <a href="#" class="btn btn-outline btn-sm">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <!-- Tournament Item -->
+                <div class="tourney-item fade-in" style="--delay: 0.2s">
+                    <div class="tourney-indicator contenders"></div>
+                    <div class="tourney-info">
+                        <span class="tourney-badge contenders-badge">Meridian Contenders</span>
+                        <h3 class="tourney-name">Open Qualifier #2</h3>
+                    </div>
+                    <div class="tourney-meta">
+                        <div class="meta-item">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                            <span>22 Mar - 24 Mar</span>
+                        </div>
+                        <div class="meta-item">
+                            <ion-icon name="people-outline"></ion-icon>
+                            <span>32 Equipos</span>
+                        </div>
+                    </div>
+                    <div class="tourney-action">
+                        <a href="#" class="btn btn-outline btn-sm">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <!-- Tournament Item -->
+                <div class="tourney-item fade-in" style="--delay: 0.3s">
+                    <div class="tourney-indicator test"></div>
+                    <div class="tourney-info">
+                        <span class="tourney-badge test-badge">Meridian Test Series</span>
+                        <h3 class="tourney-name">Community Brawl March</h3>
+                    </div>
+                    <div class="tourney-meta">
+                        <div class="meta-item">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                            <span>15 Mar - 16 Mar</span>
+                        </div>
+                        <div class="meta-item">
+                            <ion-icon name="people-outline"></ion-icon>
+                            <span>64 Equipos</span>
+                        </div>
+                    </div>
+                    <div class="tourney-action">
+                        <a href="#" class="btn btn-outline btn-sm">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fourth Section: News (Twitter integration) -->
+    <section class="section news-section" id="noticias">
+        <div class="container fade-in">
+            <div class="section-header">
+                <h2 class="section-title">Últimas <span class="text-accent">Noticias</span></h2>
+                <a href="https://x.com/Meridiancircuit" target="_blank" class="view-all-link twitter-link">
+                    Seguir @Meridiancircuit <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+            </div>
+            
+            <div class="news-grid">
+                <!-- Twitter Mock Card -->
+                <div class="news-card fade-in" style="--delay: 0.1s">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar">
+                            <ion-icon name="game-controller-outline"></ion-icon>
+                        </div>
+                        <div class="tweet-user">
+                            <span class="tweet-name">Meridian Circuit</span>
+                            <span class="tweet-handle">@Meridiancircuit</span>
+                        </div>
+                        <div class="tweet-icon">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="tweet-content">
+                        ¡Las inscripciones para la primera Meridian Test Series ya están abiertas! 🎮🔥
+                        <br><br>
+                        Reúne a tu equipo y demuestra de lo que sois capaces. El camino hacia la Meridian Cup comienza aquí.
+                        <br><br>
+                        👉 link.meridian.com/register
+                        <br>
+                        #CS2 #MeridianCircuit #Esports
+                    </div>
+                    <div class="tweet-footer">
+                        <span><ion-icon name="heart-outline"></ion-icon> 245</span>
+                        <span><ion-icon name="repeat-outline"></ion-icon> 56</span>
+                        <span>Hace 2 horas</span>
+                    </div>
+                </div>
+                
+                <!-- Twitter Mock Card -->
+                <div class="news-card fade-in" style="--delay: 0.2s">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar">
+                            <ion-icon name="game-controller-outline"></ion-icon>
+                        </div>
+                        <div class="tweet-user">
+                            <span class="tweet-name">Meridian Circuit</span>
+                            <span class="tweet-handle">@Meridiancircuit</span>
+                        </div>
+                        <div class="tweet-icon">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="tweet-content">
+                        Anunciamos los 8 equipos invitados directamente a la Meridian Cup de Primavera. 🏆
+                        <br><br>
+                        ¿Quién se alzará con la victoria en esta nueva edición? ¡La competición será más feroz que nunca!
+                        <br><br>
+                        #MeridianCup #CSGO
+                    </div>
+                    <div class="tweet-footer">
+                        <span><ion-icon name="heart-outline"></ion-icon> 892</span>
+                        <span><ion-icon name="repeat-outline"></ion-icon> 154</span>
+                        <span>Ayer</span>
+                    </div>
+                </div>
+                
+                <!-- Twitter Mock Card -->
+                <div class="news-card fade-in" style="--delay: 0.3s">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar">
+                            <ion-icon name="game-controller-outline"></ion-icon>
+                        </div>
+                        <div class="tweet-user">
+                            <span class="tweet-name">Meridian Circuit</span>
+                            <span class="tweet-handle">@Meridiancircuit</span>
+                        </div>
+                        <div class="tweet-icon">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="tweet-content">
+                        Bienvenidos a Meridian. 🌐
+                        <br><br>
+                        Hemos rediseñado por completo el circuito competitivo de Counter Strike para ofrecer oportunidades a equipos de todos los niveles.
+                        <br><br>
+                        Prepárate.
+                    </div>
+                    <div class="tweet-footer">
+                        <span><ion-icon name="heart-outline"></ion-icon> 1.2k</span>
+                        <span><ion-icon name="repeat-outline"></ion-icon> 342</span>
+                        <span>5 Mar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Socials Section -->
+    <section class="section social-section" id="social">
+        <div class="container fade-in">
+            <h2 class="section-title text-center">Únete a la <span class="text-accent">Comunidad</span></h2>
+            <p class="section-desc text-center">Síguenos en nuestras plataformas oficiales para no perderte ningún detalle.</p>
+            
+            <div class="social-links">
+                <a href="https://x.com/Meridiancircuit" target="_blank" class="social-btn twitter">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                    <span>Twitter/X</span>
+                </a>
+                <a href="https://discord.gg/B8H38YfT8Y" target="_blank" class="social-btn discord">
+                    <ion-icon name="logo-discord"></ion-icon>
+                    <span>Discord</span>
+                </a>
+                <a href="#" class="social-btn twitch">
+                    <ion-icon name="logo-twitch"></ion-icon>
+                    <span>Twitch</span>
+                </a>
+                <a href="#" class="social-btn instagram">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <span class="logo-icon"><ion-icon name="game-controller-outline"></ion-icon></span>
+                MERIDIAN
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-contact">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <a href="mailto:meridian@ivexy.com">meridian@ivexy.com</a>
+                </div>
+                
+                <div class="footer-copyright">
+                    <p>Copyright &copy; 2026 Meridian</p>
+                    <p class="text-muted">Perteneciente al grupo Ivexy &copy;</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

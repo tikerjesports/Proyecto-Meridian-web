@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificaciones | Meridian Circuit</title>
+    <meta name="description" content="Sigue las clasificaciones oficiales de la Meridian Cup, Contenders y Test Series.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="rankings-page">
+    
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><ion-icon name="game-controller-outline"></ion-icon></span>
+                MERIDIAN
+            </a>
+            
+            <button class="mobile-toggle" aria-label="Abrir menú">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="competitions.html">Competiciones</a></li>
+                <li><a href="rankings.html" class="active">Clasificaciones</a></li>
+                <li><a href="news.html">Noticias</a></li>
+                <li><a href="register.html" class="nav-btn">Registro</a></li>
+                <li><a href="index.html#social">Social</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header pattern-bg">
+        <div class="container">
+            <h1 class="page-title fade-in">Clasificaciones <span class="text-accent">Oficiales</span></h1>
+            <p class="page-desc fade-in" style="--delay: 0.1s">Sigue de cerca el ranking actual en las distintas divisiones de Meridian.</p>
+        </div>
+    </header>
+
+    <!-- Rankings Section -->
+    <section class="section">
+        <div class="container">
+            
+            <!-- Meridian Cup Table -->
+            <div class="ranking-tier-section fade-in">
+                <div class="tier-header">
+                    <div class="tier-badge-large premium-badge">
+                        <ion-icon name="trophy-outline"></ion-icon> Clasificación Meridian Cup
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="ranking-table data-table" data-tier="cup">
+                        <thead>
+                            <tr>
+                                <th>Posición</th>
+                                <th>Equipo</th>
+                                <th>Partidos</th>
+                                <th class="sortable" data-sort="wins">Victorias <ion-icon name="swap-vertical"></ion-icon></th>
+                                <th>Derrotas</th>
+                                <th>Dif. Mapas</th>
+                                <th class="sortable active-sort" data-sort="points">Puntos <ion-icon name="chevron-down"></ion-icon></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="rank-up">
+                                <td><span class="rank-num">1</span></td>
+                                <td class="team-cell"><div class="team-logo-placeholder"><ion-icon name="flame"></ion-icon></div> Nexus Gaming</td>
+                                <td>14</td>
+                                <td>12</td>
+                                <td>2</td>
+                                <td class="positive">+18</td>
+                                <td class="points-col">36</td>
+                            </tr>
+                            <tr class="rank-same">
+                                <td><span class="rank-num">2</span></td>
+                                <td class="team-cell"><div class="team-logo-placeholder"><ion-icon name="skull"></ion-icon></div> Void Walkers</td>
+                                <td>14</td>
+                                <td>11</td>
+                                <td>3</td>
+                                <td class="positive">+12</td>
+                                <td class="points-col">33</td>
+                            </tr>
+                            <tr class="rank-down">
+                                <td><span class="rank-num">3</span></td>
+                                <td class="team-cell"><div class="team-logo-placeholder"><ion-icon name="planet"></ion-icon></div> Astral Esports</td>
+                                <td>14</td>
+                                <td>10</td>
+                                <td>4</td>
+                                <td class="positive">+9</td>
+                                <td class="points-col">30</td>
+                            </tr>
+                            <tr class="rank-same">
+                                <td><span class="rank-num">4</span></td>
+                                <td class="team-cell"><div class="team-logo-placeholder"><ion-icon name="flash"></ion-icon></div> Surge Roster</td>
+                                <td>14</td>
+                                <td>7</td>
+                                <td>7</td>
+                                <td class="neutral">0</td>
+                                <td class="points-col">21</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Meridian Contenders Table -->
+            <div class="ranking-tier-section fade-in" style="--delay: 0.1s">
+                <div class="tier-header">
+                    <div class="tier-badge-large contenders-badge">
+                        <ion-icon name="flash-outline"></ion-icon> Clasificación Meridian Contenders
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="ranking-table data-table" data-tier="contenders">
+                        <thead>
+                            <tr>
+                                <th>Posición</th>
+                                <th>Equipo</th>
+                                <th>Partidos</th>
+                                <th class="sortable" data-sort="wins">Victorias <ion-icon name="swap-vertical"></ion-icon></th>
+                                <th>Derrotas</th>
+                                <th>Dif. Mapas</th>
+                                <th class="sortable active-sort" data-sort="points">Puntos <ion-icon name="chevron-down"></ion-icon></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="rank-up">
+                                <td><span class="rank-num">1</span></td>
+                                <td class="team-cell"><div class="team-logo-placeholder"><ion-icon name="snow"></ion-icon></div> Frostbite AC</td>
+                                <td>10</td>
+                                <td>9</td>
+                                <td>1</td>
+                                <td class="positive">+15</td>
+                                <td class="points-col">27</td>
+                            </tr>
+                            <tr class="rank-up">
+                                <td><span class="rank-num">2</span></td>
+                                <td class="team-cell"><div class="team-logo-placeholder"><ion-icon name="water"></ion-icon></div> Liquid Force</td>
+                                <td>10</td>
+                                <td>8</td>
+                                <td>2</td>
+                                <td class="positive">+10</td>
+                                <td class="points-col">24</td>
+                            </tr>
+                            <tr class="rank-down">
+                                <td><span class="rank-num">3</span></td>
+                                <td class="team-cell"><div class="team-logo-placeholder"><ion-icon name="leaf"></ion-icon></div> Verdant Team</td>
+                                <td>10</td>
+                                <td>6</td>
+                                <td>4</td>
+                                <td class="positive">+2</td>
+                                <td class="points-col">18</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Meridian Test Series Table -->
+            <div class="ranking-tier-section fade-in" style="--delay: 0.2s">
+                <div class="tier-header">
+                    <div class="tier-badge-large test-badge">
+                        <ion-icon name="shield-half-outline"></ion-icon> Clasificación Meridian Test Series
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="ranking-table data-table" data-tier="test">
+                        <thead>
+                            <tr>
+                                <th>Posición</th>
+                                <th>Equipo</th>
+                                <th>Partidos</th>
+                                <th class="sortable" data-sort="wins">Victorias <ion-icon name="swap-vertical"></ion-icon></th>
+                                <th>Derrotas</th>
+                                <th>Dif. Mapas</th>
+                                <th class="sortable active-sort" data-sort="points">Puntos <ion-icon name="chevron-down"></ion-icon></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="rank-same">
+                                <td><span class="rank-num">1</span></td>
+                                <td class="team-cell"><div class="team-logo-placeholder"><ion-icon name="help-buoy"></ion-icon></div> Newbie Stack</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>0</td>
+                                <td class="positive">+5</td>
+                                <td class="points-col">15</td>
+                            </tr>
+                            <tr class="rank-up">
+                                <td><span class="rank-num">2</span></td>
+                                <td class="team-cell"><div class="team-logo-placeholder"><ion-icon name="magnet"></ion-icon></div> Pull Frag</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>1</td>
+                                <td class="positive">+3</td>
+                                <td class="points-col">12</td>
+                            </tr>
+                            <tr class="rank-down">
+                                <td><span class="rank-num">3</span></td>
+                                <td class="team-cell"><div class="team-logo-placeholder"><ion-icon name="pulse"></ion-icon></div> Pulse 5</td>
+                                <td>5</td>
+                                <td>3</td>
+                                <td>2</td>
+                                <td class="positive">+1</td>
+                                <td class="points-col">9</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <span class="logo-icon"><ion-icon name="game-controller-outline"></ion-icon></span>
+                MERIDIAN
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-contact">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <a href="mailto:meridian@ivexy.com">meridian@ivexy.com</a>
+                </div>
+                
+                <div class="footer-copyright">
+                    <p>Copyright &copy; 2026 Meridian</p>
+                    <p class="text-muted">Perteneciente al grupo Ivexy &copy;</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
