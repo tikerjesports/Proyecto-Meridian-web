@@ -251,6 +251,7 @@ ul {
     width: auto;
     object-fit: contain;
     transition: transform 0.25s ease, filter 0.25s ease;
+    mix-blend-mode: screen;
 }
 
 .logo:hover .nav-logo-img, .footer-logo:hover .footer-logo-img {
@@ -374,6 +375,7 @@ ul {
     animation: float 6s ease-in-out infinite;
     transition: transform 0.25s ease, filter 0.25s ease;
     filter: drop-shadow(0 0 10px var(--accent-glow));
+    mix-blend-mode: screen;
 }
 
 .hero-logo-large:hover .hero-logo-img {
