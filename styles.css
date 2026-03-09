@@ -1765,6 +1765,20 @@ textarea:focus {
         align-items: flex-start;
         gap: 1rem;
     }
+
+    /* Adjustments for Logo addition on mobile */
+    .comp-logo-container {
+        flex: none;
+        width: 100%;
+        margin-bottom: 1rem;
+        padding: 0;
+    }
+
+    .tourney-logo-col {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
