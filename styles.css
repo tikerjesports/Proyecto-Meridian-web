@@ -877,6 +877,30 @@ bg-alternate {
     gap: 0.5rem;
 }
 
+.comp-logo-container {
+    flex: 0 0 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.comp-logo-img {
+    max-width: 80px;
+    max-height: 80px;
+    object-fit: contain;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.comp-card:hover .comp-logo-img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px var(--accent-glow));
+}
+
+.comp-card:active {
+    transform: translateY(0) scale(0.98);
+}
+
 .comp-title {
     font-size: 1.35rem;
     color: var(--text-primary);
@@ -1074,6 +1098,25 @@ td.neutral {
 .tourney-info {
     flex: 2;
     padding-left: 1rem;
+}
+
+.tourney-logo-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    width: 60px;
+}
+
+.tourney-logo-img {
+    max-width: 45px;
+    max-height: 45px;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+}
+
+.tourney-item:hover .tourney-logo-img {
+    transform: scale(1.1);
 }
 
 .tourney-badge {
