@@ -240,6 +240,14 @@ function loadPublicData() {
     const news = JSON.parse(localStorage.getItem('meridian_news') || '[]');
     const ranks = JSON.parse(localStorage.getItem('meridian_rankings') || '[]');
 
+    // Helper to get competition logo
+    const getCompLogo = (category) => {
+        if (category === 'Meridian Cup') return 'assets/logos/meridian-cup.png';
+        if (category === 'Meridian Contenders') return 'assets/logos/meridian-contenders.png';
+        if (category === 'Meridian Test Series') return 'assets/logos/meridian-test-series.png';
+        return 'assets/logos/meridian-logo.png';
+    };
+
     // --- 1. RANKINGS ---
     if (isRankings || document.querySelector('.ranking-page')) {
         ranks.sort((a,b) => b.puntos - a.puntos || b.mapDiff - a.mapDiff);
@@ -334,6 +342,9 @@ function loadPublicData() {
             return `
                 <div class="comp-card fade-in ${type}-card visible">
                     <div class="comp-status ${statusClass}">${statusText}</div>
+                    <div class="comp-logo-container">
+                        <img src="${getCompLogo(comp.category)}" alt="${comp.category} Logo" class="comp-logo-img">
+                    </div>
                     <div class="comp-main">
                         <h3 class="comp-title">${comp.name}</h3>
                         <div class="comp-details">
@@ -377,6 +388,9 @@ function loadPublicData() {
                 return `
                 <div class="tourney-item fade-in visible">
                     <div class="tourney-indicator ${indClass}"></div>
+                    <div class="tourney-logo-col">
+                        <img src="${getCompLogo(c.category)}" alt="${c.category} Logo" class="tourney-logo-img">
+                    </div>
                     <div class="tourney-info">
                         <span class="tourney-badge ${badgeClass}">${c.category}</span>
                         <h3 class="tourney-name">${c.name}</h3>
