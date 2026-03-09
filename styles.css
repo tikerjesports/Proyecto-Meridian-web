@@ -246,16 +246,16 @@ ul {
     color: #fff;
 }
 
-.logo-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    border-radius: 4px;
-    color: var(--bg-dark);
-    font-size: 1.25rem;
+.nav-logo-img, .footer-logo-img {
+    height: 2.5rem;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.logo:hover .nav-logo-img, .footer-logo:hover .footer-logo-img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px var(--accent-glow));
 }
 
 .nav-links {
@@ -367,18 +367,18 @@ ul {
     margin-bottom: 2rem;
 }
 
-.logo-icon-large {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 4rem;
-    height: 4rem;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    border-radius: 8px;
-    color: var(--bg-dark);
-    font-size: 2.5rem;
-    box-shadow: var(--shadow-glow);
+.hero-logo-img {
+    height: 5rem;
+    width: auto;
+    object-fit: contain;
     animation: float 6s ease-in-out infinite;
+    transition: transform 0.25s ease, filter 0.25s ease;
+    filter: drop-shadow(0 0 10px var(--accent-glow));
+}
+
+.hero-logo-large:hover .hero-logo-img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px var(--accent-primary));
 }
 
 @keyframes float {
