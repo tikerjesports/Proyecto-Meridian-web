@@ -433,6 +433,189 @@ ul {
     60% { transform: translateY(-7px) translateX(-50%); }
 }
 
+/* Next Match Widget */
+.next-match-section {
+    padding: 2rem 0 4rem;
+    position: relative;
+    z-index: 10;
+    margin-top: -6rem; /* Pull up over hero section */
+}
+
+.next-match-card {
+    background: rgba(18, 21, 29, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 255, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.next-match-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+}
+
+.next-match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 1rem;
+}
+
+.next-match-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 229, 255, 0.1);
+    color: var(--accent-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    animation: pulse-glow 2s infinite alternate;
+}
+
+@keyframes pulse-glow {
+    from { box-shadow: 0 0 5px rgba(0, 229, 255, 0.2); }
+    to { box-shadow: 0 0 15px rgba(0, 229, 255, 0.5); }
+}
+
+.next-match-category {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.next-match-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.match-team {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    min-width: 150px;
+}
+
+.match-team-logo {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--text-muted);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+.match-team h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+}
+
+.match-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.match-vs {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+    background: var(--bg-dark);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.countdown {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.cd-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--bg-darker);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 8px;
+    padding: 0.75rem 0.5rem;
+    min-width: 60px;
+}
+
+.cd-box span {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.cd-box small {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .next-match-body {
+        flex-direction: column;
+    }
+    .match-center {
+        order: -1;
+        margin-bottom: 1rem;
+    }
+    .match-team {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+    .match-team-logo {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    .match-team.team-left { flex-direction: row-reverse; text-align: right; }
+}
+
 /* Sections General */
 .section {
     padding: 6rem 0;

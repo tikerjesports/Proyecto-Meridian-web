@@ -68,6 +68,40 @@
         </a>
     </header>
 
+    <!-- Next Match Widget -->
+    <section class="section next-match-section" id="proximo-partido">
+        <div class="container">
+            <div class="next-match-card fade-in" id="nextMatchWidget">
+                <div class="next-match-header">
+                    <div class="next-match-badge"><ion-icon name="time-outline"></ion-icon> Próximo Partido</div>
+                    <div class="next-match-category" id="nmCategory">-</div>
+                </div>
+                
+                <div class="next-match-body">
+                    <div class="match-team team-left">
+                        <div class="match-team-logo"><ion-icon name="shield"></ion-icon></div>
+                        <h3 id="nmTeam1">-</h3>
+                    </div>
+                    
+                    <div class="match-center">
+                        <div class="match-vs">VS</div>
+                        <div class="countdown" id="nmCountdown">
+                            <div class="cd-box"><span id="cdDays">00</span><small>Días</small></div>
+                            <div class="cd-box"><span id="cdHours">00</span><small>Hrs</small></div>
+                            <div class="cd-box"><span id="cdMins">00</span><small>Min</small></div>
+                            <div class="cd-box"><span id="cdSecs">00</span><small>Seg</small></div>
+                        </div>
+                    </div>
+                    
+                    <div class="match-team team-right">
+                        <div class="match-team-logo"><ion-icon name="shield"></ion-icon></div>
+                        <h3 id="nmTeam2">-</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Second Section: Categories (About Meridian) -->
     <section class="section categories-section" id="sobre-meridian">
         <div class="container">
@@ -84,7 +118,7 @@
                         <ion-icon name="shield-half-outline"></ion-icon>
                     </div>
                     <h3>Meridian Test Series</h3>
-                    <p>El punto de entrada al circuito. Demuestra el potencial de tu equipo y comienza tu camino hacia la cima.</p>
+                    <p>Torneos de nivel básico utilizados para probar equipos y permitir que nuevos equipos entren al ecosistema de Meridian.</p>
                 </div>
                 
                 <!-- Card 2 -->
@@ -94,7 +128,7 @@
                         <ion-icon name="flash-outline"></ion-icon>
                     </div>
                     <h3>Meridian Contenders</h3>
-                    <p>La liga intermedia para equipos establecidos. Competición feroz por un pase a la máxima categoría.</p>
+                    <p>Nivel competitivo intermedio donde los equipos más fuertes compiten para demostrar su valía y ascender en el circuito.</p>
                 </div>
                 
                 <!-- Card 3 -->
@@ -104,7 +138,7 @@
                         <ion-icon name="trophy-outline"></ion-icon>
                     </div>
                     <h3>Meridian Cup</h3>
-                    <p>La cima del circuito. Los mejores equipos europeos combatiendo por la gloria, prestigio y enormes premios.</p>
+                    <p>El nivel más alto del circuito Meridian donde los mejores equipos compiten por el título principal.</p>
                 </div>
             </div>
         </div>
@@ -124,7 +158,7 @@
                     <div class="tourney-indicator premium"></div>
                     <div class="tourney-info">
                         <span class="tourney-badge premium-badge">Meridian Cup</span>
-                        <h3 class="tourney-name">Spring Clash 2026</h3>
+                        <h3 class="tourney-name">Meridian Cup</h3>
                     </div>
                     <div class="tourney-meta">
                         <div class="meta-item">
@@ -137,7 +171,7 @@
                         </div>
                     </div>
                     <div class="tourney-action">
-                        <a href="#" class="btn btn-outline btn-sm">Ver Detalles</a>
+                        <a href="competitions.html" class="btn btn-outline btn-sm">Ver Detalles</a>
                     </div>
                 </div>
 
@@ -146,7 +180,7 @@
                     <div class="tourney-indicator contenders"></div>
                     <div class="tourney-info">
                         <span class="tourney-badge contenders-badge">Meridian Contenders</span>
-                        <h3 class="tourney-name">Open Qualifier #2</h3>
+                        <h3 class="tourney-name">Meridian Contenders</h3>
                     </div>
                     <div class="tourney-meta">
                         <div class="meta-item">
@@ -159,7 +193,7 @@
                         </div>
                     </div>
                     <div class="tourney-action">
-                        <a href="#" class="btn btn-outline btn-sm">Ver Detalles</a>
+                        <a href="competitions.html" class="btn btn-outline btn-sm">Ver Detalles</a>
                     </div>
                 </div>
 
@@ -168,7 +202,7 @@
                     <div class="tourney-indicator test"></div>
                     <div class="tourney-info">
                         <span class="tourney-badge test-badge">Meridian Test Series</span>
-                        <h3 class="tourney-name">Community Brawl March</h3>
+                        <h3 class="tourney-name">Meridian Test Series</h3>
                     </div>
                     <div class="tourney-meta">
                         <div class="meta-item">
@@ -181,7 +215,7 @@
                         </div>
                     </div>
                     <div class="tourney-action">
-                        <a href="#" class="btn btn-outline btn-sm">Ver Detalles</a>
+                        <a href="competitions.html" class="btn btn-outline btn-sm">Ver Detalles</a>
                     </div>
                 </div>
             </div>

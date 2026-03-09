@@ -213,4 +213,212 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    
+    // 7. Dynamic Data Loading from LocalStorage (Public Pages)
+    // Only overwrite if we have mock data initialized from admin panel
+    if (localStorage.getItem('meridian_competitions')) {
+        loadPublicData();
+    }
 });
+
+function loadPublicData() {
+    const path = window.location.pathname;
+    const isIndex = path.endsWith('index.html') || path.endsWith('/');
+    const isComps = path.includes('competitions.html');
+    const isRankings = path.includes('rankings.html');
+    const isNews = path.includes('news.html');
+    
+    // Helper to get team name
+    const getTeamName = (id) => {
+        const teams = JSON.parse(localStorage.getItem('meridian_teams') || '[]');
+        const t = teams.find(t => t.id == id);
+        return t ? t.name : 'Equipo Desconocido';
+    };
+
+    const comps = JSON.parse(localStorage.getItem('meridian_competitions') || '[]');
+    const matches = JSON.parse(localStorage.getItem('meridian_matches') || '[]');
+    const news = JSON.parse(localStorage.getItem('meridian_news') || '[]');
+    const ranks = JSON.parse(localStorage.getItem('meridian_rankings') || '[]');
+
+    // --- 1. RANKINGS ---
+    if (isRankings || document.querySelector('.ranking-page')) {
+        ranks.sort((a,b) => b.puntos - a.puntos || b.mapDiff - a.mapDiff);
+        
+        const renderTable = (tableElement, data) => {
+            if (!tableElement) return;
+            let html = '';
+            data.forEach((r, i) => {
+                let rankClass = i === 0 ? 'rank-up' : (i === 1 ? 'rank-same' : 'rank-down');
+                let mapClass = r.mapDiff > 0 ? 'positive' : (r.mapDiff < 0 ? 'negative' : 'neutral');
+                let mapSign = r.mapDiff > 0 ? '+' : '';
+                
+                html += `
+                <tr class="${rankClass}">
+                    <td><span class="rank-num">${i+1}</span></td>
+                    <td class="team-cell"><div class="team-logo-placeholder"><ion-icon name="shield"></ion-icon></div> ${getTeamName(r.teamId)}</td>
+                    <td>${r.pJugados}</td>
+                    <td>${r.pGanados}</td>
+                    <td>${r.pPerdidos}</td>
+                    <td class="${mapClass}">${mapSign}${r.mapDiff}</td>
+                    <td class="points-col">${r.puntos}</td>
+                </tr>`;
+            });
+            tableElement.innerHTML = html || '<tr><td colspan="7" class="text-center" style="padding: 2rem;">No hay datos para esta división aún</td></tr>';
+        };
+
+        const cupTable = document.querySelector('.data-table[data-tier="cup"] tbody');
+        const contendersTable = document.querySelector('.data-table[data-tier="contenders"] tbody');
+        const testTable = document.querySelector('.data-table[data-tier="test"] tbody');
+        
+        // For demonstration, map all teams to Cup if less than 5, or distribute.
+        if (ranks.length > 0) {
+            renderTable(cupTable, ranks);
+            // Clear others
+            if(contendersTable) renderTable(contendersTable, []);
+            if(testTable) renderTable(testTable, []);
+        }
+    }
+
+    // --- 2. NEXT MATCH WIDGET ---
+    const nextMatchWidget = document.getElementById('nextMatchWidget');
+    if (nextMatchWidget) {
+        const pendingMatches = matches.filter(m => m.status === 'Pendiente' && m.date && m.time);
+        if (pendingMatches.length > 0) {
+            pendingMatches.sort((a, b) => new Date(`${a.date}T${a.time}`) - new Date(`${b.date}T${b.time}`));
+            const nextMatch = pendingMatches[0];
+            const matchDate = new Date(`${nextMatch.date}T${nextMatch.time}`).getTime();
+            
+            document.getElementById('nmCategory').innerText = nextMatch.category;
+            document.getElementById('nmTeam1').innerText = getTeamName(nextMatch.team1);
+            document.getElementById('nmTeam2').innerText = getTeamName(nextMatch.team2);
+            
+            const timer = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = matchDate - now;
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                    ['cdDays','cdHours','cdMins','cdSecs'].forEach(id => document.getElementById(id).innerText = "00");
+                    return;
+                }
+
+                document.getElementById('cdDays').innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+                document.getElementById('cdHours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+                document.getElementById('cdMins').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+                document.getElementById('cdSecs').innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+            }, 1000);
+        } else {
+            nextMatchWidget.style.display = 'none';
+        }
+    }
+
+    // --- 3. COMPETITIONS PAGE ---
+    if (isComps) {
+        const renderCompCard = (comp, type) => {
+            let statusClass = "status-upcoming";
+            let statusText = "Próximamente";
+            const curDate = new Date();
+            const startDate = new Date(comp.startDate);
+            const endDate = new Date(comp.endDate);
+            
+            if (curDate >= startDate && curDate <= endDate) {
+                statusClass = "status-live";
+                statusText = "En Directo";
+            } else if (curDate > endDate) {
+                statusClass = "status-completed";
+                statusText = "Finalizado";
+            }
+
+            const dStr = startDate.toLocaleDateString('es-ES', { day: 'numeric', month: 'short' }) + ' - ' + endDate.toLocaleDateString('es-ES', { day: 'numeric', month: 'short' });
+
+            return `
+                <div class="comp-card fade-in ${type}-card visible">
+                    <div class="comp-status ${statusClass}">${statusText}</div>
+                    <div class="comp-main">
+                        <h3 class="comp-title">${comp.name}</h3>
+                        <div class="comp-details">
+                            <span class="detail-item"><ion-icon name="game-controller-outline"></ion-icon> ${comp.format}</span>
+                            <span class="detail-item"><ion-icon name="calendar-outline"></ion-icon> ${dStr}</span>
+                            <span class="detail-item"><ion-icon name="people-outline"></ion-icon> Varios Equipos</span>
+                        </div>
+                    </div>
+                    <div class="comp-action">
+                        <a href="#" class="btn btn-outline btn-sm">Ver Torneo</a>
+                    </div>
+                </div>
+            `;
+        };
+
+        const cupContainer = document.querySelector('.cup-section .comps-list');
+        const contendersContainer = document.querySelector('.contenders-section .comps-list');
+        const testContainer = document.querySelector('.test-section .comps-list');
+
+        const cupComps = comps.filter(c => c.category === 'Meridian Cup');
+        const contComps = comps.filter(c => c.category === 'Meridian Contenders');
+        const testComps = comps.filter(c => c.category === 'Meridian Test Series');
+
+        if (cupContainer && cupComps.length > 0) cupContainer.innerHTML = cupComps.map(c => renderCompCard(c, 'premium')).join('');
+        if (contendersContainer && contComps.length > 0) contendersContainer.innerHTML = contComps.map(c => renderCompCard(c, 'contenders')).join('');
+        if (testContainer && testComps.length > 0) testContainer.innerHTML = testComps.map(c => renderCompCard(c, 'test')).join('');
+    }
+
+    // --- 4. INDEX PAGE RECENT COMPETITIONS ---
+    if (isIndex && comps.length > 0) {
+        const tList = document.querySelector('.tournament-list');
+        if (tList) {
+            tList.innerHTML = comps.slice(0, 3).map(c => {
+                let badgeClass = '', indClass = '';
+                if(c.category === 'Meridian Cup') { badgeClass = 'premium-badge'; indClass = 'premium'; }
+                else if(c.category === 'Meridian Contenders') { badgeClass = 'contenders-badge'; indClass = 'contenders'; }
+                else { badgeClass = 'test-badge'; indClass = 'test'; }
+
+                const ds = new Date(c.startDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' });
+                const de = new Date(c.endDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' });
+                return `
+                <div class="tourney-item fade-in visible">
+                    <div class="tourney-indicator ${indClass}"></div>
+                    <div class="tourney-info">
+                        <span class="tourney-badge ${badgeClass}">${c.category}</span>
+                        <h3 class="tourney-name">${c.name}</h3>
+                    </div>
+                    <div class="tourney-meta">
+                        <div class="meta-item"><ion-icon name="calendar-outline"></ion-icon><span>${ds} - ${de}</span></div>
+                        <div class="meta-item"><ion-icon name="people-outline"></ion-icon><span>${c.format}</span></div>
+                    </div>
+                    <div class="tourney-action"><a href="competitions.html" class="btn btn-outline btn-sm">Ver Detalles</a></div>
+                </div>`;
+            }).join('');
+        }
+    }
+
+    // --- 5. NEWS PAGE ---
+    if (isNews && news.length > 0) {
+        const newsGrid = document.querySelector('.news-detailed-section .news-grid');
+        if (newsGrid) {
+            newsGrid.innerHTML = news.map(n => `
+                <article class="news-card fade-in twitter-card visible">
+                    <div class="tweet-header">
+                        <div class="tweet-author">
+                            <div class="author-avatar"><ion-icon name="game-controller"></ion-icon></div>
+                            <div class="author-info">
+                                <span class="author-name">Meridian Admin</span>
+                                <span class="author-handle">@Meridiancircuit</span>
+                            </div>
+                        </div>
+                        <ion-icon name="logo-twitter" class="twitter-icon"></ion-icon>
+                    </div>
+                    <div class="tweet-content">
+                        <h4 class="tweet-title">${n.title}</h4>
+                        <p class="tweet-excerpt">${n.content}</p>
+                    </div>
+                    <div class="tweet-footer">
+                        <span class="tweet-date">${n.date}</span>
+                        <a href="https://x.com/Meridiancircuit" target="_blank" class="btn btn-outline btn-sm">Ver Pub.</a>
+                    </div>
+                </article>
+            `).join('');
+        }
+    }
+}
+
+
