@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">Subcategoría | Meridian Circuit</title>
-    <meta name="description" content="Tabla de liga, estadísticas de equipos y jugadores, y calendario de partidos de esta subcategoría Meridian.">
+    <title id="pageTitle">Meridian Cup | Meridian Circuit</title>
+    <meta name="description" content="Cuadro del torneo, estadísticas de equipos y calendario de partidos de Meridian Cup.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,11 +56,11 @@
             </div>
             <div class="subcat-header-content">
                 <div class="subcat-logo-wrap fade-in" style="--delay: 0.05s">
-                    <img id="subcatLogoImg" src="assets/logos/meridian-logo.png" alt="Logo subcategoría" class="subcat-logo-img">
+                    <img id="subcatLogoImg" src="assets/logos/meridian-cup.png" alt="Meridian Cup Logo" class="subcat-logo-img">
                 </div>
                 <div>
-                    <h1 class="page-title fade-in" style="--delay: 0.1s" id="subcatTitle">Subcategoría</h1>
-                    <p class="page-desc fade-in" style="--delay: 0.2s" id="subcatDesc">Liga, estadísticas y calendario de partidos.</p>
+                    <h1 class="page-title fade-in" style="--delay: 0.1s" id="subcatTitle">Meridian Cup</h1>
+                    <p class="page-desc fade-in" style="--delay: 0.2s" id="subcatDesc">El nivel más alto del circuito Meridian donde los mejores equipos compiten por el título principal.</p>
                     <div class="subcat-meta-row fade-in" style="--delay: 0.25s">
                         <span class="subcat-meta-item" id="subcatGame">
                             <ion-icon name="game-controller-outline"></ion-icon> CS:GO
@@ -82,14 +82,11 @@
     <div class="subcat-tabs-bar sticky-tabs">
         <div class="container">
             <nav class="subcat-tabs" id="subcatTabs">
-                <button class="tab-btn active" data-target="leagueSection">
-                    <ion-icon name="podium-outline"></ion-icon> Clasificación
+                <button class="tab-btn active" data-target="bracketSection">
+                    <ion-icon name="git-network-outline"></ion-icon> Cuadro
                 </button>
                 <button class="tab-btn" data-target="teamStatsSection">
-                    <ion-icon name="bar-chart-outline"></ion-icon> Stats Equipos
-                </button>
-                <button class="tab-btn" data-target="playerStatsSection">
-                    <ion-icon name="person-outline"></ion-icon> Stats Jugadores
+                    <ion-icon name="bar-chart-outline"></ion-icon> Stats Torneo
                 </button>
                 <button class="tab-btn" data-target="calendarSection">
                     <ion-icon name="calendar-outline"></ion-icon> Calendario
@@ -98,13 +95,13 @@
         </div>
     </div>
 
-    <!-- ===================== SECTION 1: LEAGUE TABLE ===================== -->
-    <section class="section subcat-section" id="leagueSection">
+    <!-- ===================== SECTION 1: TOURNAMENT BRACKET ===================== -->
+    <section class="section subcat-section" id="bracketSection">
         <div class="container">
             <div class="subcat-section-header fade-in">
                 <div>
-                    <h2 class="subcat-section-title"><span class="text-accent">Tabla</span> de Liga</h2>
-                    <p class="subcat-section-desc">Clasificación actualizada automáticamente según los resultados más recientes.</p>
+                    <h2 class="subcat-section-title">Cuadro de <span class="text-accent">Eliminatorias</span></h2>
+                    <p class="subcat-section-desc">Fase final de la Meridian Cup.</p>
                 </div>
                 <div class="table-controls">
                     <span class="table-updated-badge">
@@ -113,83 +110,35 @@
                 </div>
             </div>
 
-            <div class="league-table-wrapper fade-in" style="--delay: 0.15s">
-                <table class="subcat-table league-table" id="leagueTable">
-                    <thead>
-                        <tr>
-                            <th class="pos-col">#</th>
-                            <th class="team-col">Equipo</th>
-                            <th class="sortable-col" data-col="pj" title="Partidos Jugados">PJ</th>
-                            <th class="sortable-col" data-col="v" title="Victorias">V</th>
-                            <th class="sortable-col" data-col="d" title="Derrotas">D</th>
-                            <th class="sortable-col" data-col="e" title="Empates">E</th>
-                            <th class="sortable-col pts-col active-sort" data-col="pts" title="Puntos">PTS <ion-icon name="chevron-down-outline"></ion-icon></th>
-                            <th class="form-col">Últimos 5</th>
-                        </tr>
-                    </thead>
-                    <tbody id="leagueTableBody">
-                        <!-- Populated by JS -->
-                    </tbody>
-                </table>
-            </div>
-            
-            <!-- Legend -->
-            <div class="league-legend fade-in" style="--delay: 0.25s">
-                <span class="legend-item"><span class="legend-dot dot-qualify"></span> Clasificado</span>
-                <span class="legend-item"><span class="legend-dot dot-relegation"></span> Descenso</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== SECTION 2: TEAM STATS ===================== -->
-    <section class="section subcat-section bg-alternate-subcat" id="teamStatsSection">
-        <div class="container">
-            <div class="subcat-section-header fade-in">
-                <div>
-                    <h2 class="subcat-section-title">Estadísticas de <span class="text-accent">Equipos</span></h2>
-                    <p class="subcat-section-desc">Rendimiento detallado de cada equipo. Pasa el cursor sobre un equipo para ver su historial visual.</p>
-                </div>
-                <div class="table-controls">
-                    <select class="subcat-filter-select" id="teamStatsSortBy">
-                        <option value="winRate">Ordenar por % Victoria</option>
-                        <option value="kd">Ordenar por K/D</option>
-                        <option value="streak">Ordenar por Racha</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="team-stats-grid fade-in" style="--delay: 0.1s" id="teamStatsGrid">
+            <div class="bracket-container fade-in" style="--delay: 0.15s" id="bracketContainer">
                 <!-- Populated by JS -->
             </div>
         </div>
     </section>
 
-    <!-- ===================== SECTION 3: PLAYER STATS ===================== -->
-    <section class="section subcat-section" id="playerStatsSection">
+    <!-- ===================== SECTION 2: TOURNAMENT STATS ===================== -->
+    <section class="section subcat-section bg-alternate-subcat" id="teamStatsSection">
         <div class="container">
             <div class="subcat-section-header fade-in">
                 <div>
-                    <h2 class="subcat-section-title">Estadísticas de <span class="text-accent">Jugadores</span></h2>
-                    <p class="subcat-section-desc">Haz clic en cualquier columna para ordenar dinámicamente. Pasa el cursor para ver más detalles.</p>
-                </div>
-                <div class="table-controls">
-                    <select class="subcat-filter-select" id="playerTeamFilter">
-                        <option value="all">Todos los equipos</option>
-                    </select>
-                    <select class="subcat-filter-select" id="playerGameFilter">
-                        <option value="csgo">CS:GO</option>
-                        <option value="lol">League of Legends</option>
-                        <option value="valorant">Valorant</option>
-                    </select>
+                    <h2 class="subcat-section-title">Estadísticas del <span class="text-accent">Torneo</span></h2>
+                    <p class="subcat-section-desc">Rendimiento general de los equipos en esta copa.</p>
                 </div>
             </div>
 
-            <div class="player-table-wrapper fade-in" style="--delay: 0.1s">
-                <table class="subcat-table player-table" id="playerTable">
-                    <thead id="playerTableHead">
-                        <!-- Populated by JS based on game -->
+            <div class="player-table-wrapper fade-in" style="--delay: 0.15s">
+                <table class="subcat-table league-table" id="cupStatsTable">
+                    <thead>
+                        <tr>
+                            <th class="team-col">Equipo</th>
+                            <th class="sortable-col active-sort" data-col="pj" title="Partidos Jugados">PJ <ion-icon name="chevron-down-outline"></ion-icon></th>
+                            <th class="sortable-col" data-col="v" title="Victorias">V</th>
+                            <th class="sortable-col" data-col="d" title="Derrotas">D</th>
+                            <th class="sortable-col" data-col="mapDiff" title="Diferencia de mapas">Dif. Mapas</th>
+                            <th class="sortable-col pts-col" data-col="pts" title="Puntos">PTS</th>
+                        </tr>
                     </thead>
-                    <tbody id="playerTableBody">
+                    <tbody id="cupStatsBody">
                         <!-- Populated by JS -->
                     </tbody>
                 </table>
@@ -197,8 +146,8 @@
         </div>
     </section>
 
-    <!-- ===================== SECTION 4: MATCH CALENDAR ===================== -->
-    <section class="section subcat-section bg-alternate-subcat" id="calendarSection">
+    <!-- ===================== SECTION 3: MATCH CALENDAR ===================== -->
+    <section class="section subcat-section" id="calendarSection">
         <div class="container">
             <div class="subcat-section-header fade-in">
                 <div>
@@ -258,6 +207,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="subcategory.js"></script>
+    <script src="cup.js"></script>
 </body>
 </html>

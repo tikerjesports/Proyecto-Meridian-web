@@ -1207,3 +1207,33 @@
         min-width: auto;
     }
 }
+/* ===================== TOURNAMENT BRACKET ===================== */
+.bracket-container { display: flex; gap: 3rem; overflow-x: auto; padding: 2rem 0 4rem 0; align-items: stretch; scrollbar-width: thin; scrollbar-color: rgba(0, 229, 255, 0.3) transparent; }
+.bracket-container::-webkit-scrollbar { height: 8px; }
+.bracket-container::-webkit-scrollbar-track { background: transparent; }
+.bracket-container::-webkit-scrollbar-thumb { background: rgba(0, 229, 255, 0.3); border-radius: 4px; }
+.bracket-round { display: flex; flex-direction: column; justify-content: space-around; gap: 2rem; min-width: 280px; position: relative; }
+.bracket-round-title { font-family: var(--font-heading); font-size: 1.1rem; color: var(--accent-primary); text-align: center; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px; position: absolute; top: -3rem; left: 0; width: 100%; }
+.bracket-match { background: var(--bg-light); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; position: relative; transition: transform 0.2s, box-shadow 0.2s; z-index: 2; }
+.bracket-match:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 229, 255, 0.1); border-color: rgba(0, 229, 255, 0.2); }
+.bracket-match-header { display: flex; justify-content: space-between; padding: 0.5rem 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); font-family: var(--font-heading); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; background: rgba(0, 0, 0, 0.2); border-radius: 8px 8px 0 0; }
+.bracket-format { color: var(--text-muted); }
+.bracket-status { font-weight: 700; }
+.bracket-status.status-live { color: #ff3333; animation: pulse-text-red 1.5s infinite alternate; }
+.bracket-status.status-done { color: var(--text-muted); }
+.bracket-status.status-upcoming { color: #ffc800; }
+.bracket-match-body { display: flex; flex-direction: column; }
+.match-slot { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.03); transition: background 0.2s; }
+.match-slot:last-child { border-bottom: none; }
+.match-slot.winner { background: linear-gradient(90deg, rgba(0, 229, 255, 0.05), transparent); border-left: 3px solid var(--accent-primary); }
+.match-slot.empty-slot { opacity: 0.5; font-style: italic; }
+.slot-team-info { display: flex; align-items: center; gap: 0.6rem; }
+.slot-icon { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.05); border-radius: 4px; font-size: 0.9rem; }
+.slot-name { font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; color: var(--text-primary); }
+.slot-score { font-family: var(--font-heading); font-weight: 800; font-size: 1rem; color: var(--text-primary); }
+.winner .slot-score { color: var(--accent-primary); }
+.bracket-round:not(:last-child) .bracket-match::after { content: ''; position: absolute; right: -1.5rem; top: 50%; width: 1.5rem; height: 2px; background: rgba(255, 255, 255, 0.15); z-index: 1; }
+.bracket-round:not(:first-child) .bracket-match::before { content: ''; position: absolute; left: -1.5rem; top: 50%; width: 1.5rem; height: 2px; background: rgba(255, 255, 255, 0.15); z-index: 1; }
+/* Lines connecting upper and lower matches in next round */
+.bracket-round:not(:last-child) .bracket-match:nth-child(even)::before { content: ''; position: absolute; right: -1.5rem; top: 50%; height: calc(100% + 2rem); width: 2px; background: rgba(255, 255, 255, 0.15); z-index: 1; }
+.bracket-round:not(:last-child) .bracket-match:nth-child(odd)::before { content: ''; position: absolute; right: -1.5rem; bottom: 50%; height: calc(100% + 2rem); width: 2px; background: rgba(255, 255, 255, 0.15); z-index: 1; }

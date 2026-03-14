@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Meridian Contenders | Meridian Circuit</title>
+    <meta name="description" content="Tabla de liga, estadísticas de equipos y jugadores, y calendario de partidos de Meridian Contenders.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="subcategory.css">
+    
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <!-- Chart.js for mini graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body class="subcat-page">
+    
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logos/meridian-logo.png" alt="Meridian Logo" class="nav-logo-img">
+                MERIDIAN
+            </a>
+            
+            <button class="mobile-toggle" aria-label="Abrir menú">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="competitions.html" class="active">Competiciones</a></li>
+                <li><a href="rankings.html">Clasificaciones</a></li>
+                <li><a href="news.html">Noticias</a></li>
+                <li><a href="register.html" class="nav-btn">Registro</a></li>
+                <li><a href="index.html#social">Social</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header subcat-header pattern-bg">
+        <div class="container">
+            <div class="subcat-breadcrumb fade-in">
+                <a href="competitions.html">Competiciones</a>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+                <span id="breadcrumbCat">Subcategoría</span>
+            </div>
+            <div class="subcat-header-content">
+                <div class="subcat-logo-wrap fade-in" style="--delay: 0.05s">
+                    <img id="subcatLogoImg" src="assets/logos/meridian-contenders.png" alt="Meridian Contenders Logo" class="subcat-logo-img">
+                </div>
+                <div>
+                    <h1 class="page-title fade-in" style="--delay: 0.1s" id="subcatTitle">Meridian Contenders</h1>
+                    <p class="page-desc fade-in" style="--delay: 0.2s" id="subcatDesc">Nivel competitivo intermedio donde los equipos más fuertes compiten para demostrar su valía y ascender en el circuito.</p>
+                    <div class="subcat-meta-row fade-in" style="--delay: 0.25s">
+                        <span class="subcat-meta-item" id="subcatGame">
+                            <ion-icon name="game-controller-outline"></ion-icon> CS:GO
+                        </span>
+                        <span class="subcat-meta-item" id="subcatFormat">
+                            <ion-icon name="trophy-outline"></ion-icon> BO3
+                        </span>
+                        <span class="subcat-meta-item" id="subcatTeams">
+                            <ion-icon name="people-outline"></ion-icon> 8 Equipos
+                        </span>
+                        <span class="subcat-status-badge status-live" id="subcatStatus">En Directo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Nav Tabs -->
+    <div class="subcat-tabs-bar sticky-tabs">
+        <div class="container">
+            <nav class="subcat-tabs" id="subcatTabs">
+                <button class="tab-btn active" data-target="leagueSection">
+                    <ion-icon name="podium-outline"></ion-icon> Clasificación
+                </button>
+                <button class="tab-btn" data-target="teamStatsSection">
+                    <ion-icon name="bar-chart-outline"></ion-icon> Stats Equipos
+                </button>
+                <button class="tab-btn" data-target="playerStatsSection">
+                    <ion-icon name="person-outline"></ion-icon> Stats Jugadores
+                </button>
+                <button class="tab-btn" data-target="calendarSection">
+                    <ion-icon name="calendar-outline"></ion-icon> Calendario
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- ===================== SECTION 1: LEAGUE TABLE ===================== -->
+    <section class="section subcat-section" id="leagueSection">
+        <div class="container">
+            <div class="subcat-section-header fade-in">
+                <div>
+                    <h2 class="subcat-section-title"><span class="text-accent">Tabla</span> de Liga</h2>
+                    <p class="subcat-section-desc">Clasificación actualizada automáticamente según los resultados más recientes.</p>
+                </div>
+                <div class="table-controls">
+                    <span class="table-updated-badge">
+                        <ion-icon name="refresh-outline"></ion-icon> Actualizado en vivo
+                    </span>
+                </div>
+            </div>
+
+            <div class="league-table-wrapper fade-in" style="--delay: 0.15s">
+                <table class="subcat-table league-table" id="leagueTable">
+                    <thead>
+                        <tr>
+                            <th class="pos-col">#</th>
+                            <th class="team-col">Equipo</th>
+                            <th class="sortable-col" data-col="pj" title="Partidos Jugados">PJ</th>
+                            <th class="sortable-col" data-col="v" title="Victorias">V</th>
+                            <th class="sortable-col" data-col="d" title="Derrotas">D</th>
+                            <th class="sortable-col" data-col="e" title="Empates">E</th>
+                            <th class="sortable-col pts-col active-sort" data-col="pts" title="Puntos">PTS <ion-icon name="chevron-down-outline"></ion-icon></th>
+                            <th class="form-col">Últimos 5</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leagueTableBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Legend -->
+            <div class="league-legend fade-in" style="--delay: 0.25s">
+                <span class="legend-item"><span class="legend-dot dot-qualify"></span> Clasificado</span>
+                <span class="legend-item"><span class="legend-dot dot-relegation"></span> Descenso</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 2: TEAM STATS ===================== -->
+    <section class="section subcat-section bg-alternate-subcat" id="teamStatsSection">
+        <div class="container">
+            <div class="subcat-section-header fade-in">
+                <div>
+                    <h2 class="subcat-section-title">Estadísticas de <span class="text-accent">Equipos</span></h2>
+                    <p class="subcat-section-desc">Rendimiento detallado de cada equipo. Pasa el cursor sobre un equipo para ver su historial visual.</p>
+                </div>
+                <div class="table-controls">
+                    <select class="subcat-filter-select" id="teamStatsSortBy">
+                        <option value="winRate">Ordenar por % Victoria</option>
+                        <option value="kd">Ordenar por K/D</option>
+                        <option value="streak">Ordenar por Racha</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="team-stats-grid fade-in" style="--delay: 0.1s" id="teamStatsGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 3: PLAYER STATS ===================== -->
+    <section class="section subcat-section" id="playerStatsSection">
+        <div class="container">
+            <div class="subcat-section-header fade-in">
+                <div>
+                    <h2 class="subcat-section-title">Estadísticas de <span class="text-accent">Jugadores</span></h2>
+                    <p class="subcat-section-desc">Haz clic en cualquier columna para ordenar dinámicamente. Pasa el cursor para ver más detalles.</p>
+                </div>
+                <div class="table-controls">
+                    <select class="subcat-filter-select" id="playerTeamFilter">
+                        <option value="all">Todos los equipos</option>
+                    </select>
+                    <select class="subcat-filter-select" id="playerGameFilter">
+                        <option value="csgo">CS:GO</option>
+                        <option value="lol">League of Legends</option>
+                        <option value="valorant">Valorant</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="player-table-wrapper fade-in" style="--delay: 0.1s">
+                <table class="subcat-table player-table" id="playerTable">
+                    <thead id="playerTableHead">
+                        <!-- Populated by JS based on game -->
+                    </thead>
+                    <tbody id="playerTableBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 4: MATCH CALENDAR ===================== -->
+    <section class="section subcat-section bg-alternate-subcat" id="calendarSection">
+        <div class="container">
+            <div class="subcat-section-header fade-in">
+                <div>
+                    <h2 class="subcat-section-title"><span class="text-accent">Calendario</span> de Partidos</h2>
+                    <p class="subcat-section-desc">Todos los enfrentamientos con temporizadores en vivo. Filtra por equipo o semana.</p>
+                </div>
+                <div class="table-controls calendar-controls">
+                    <select class="subcat-filter-select" id="calTeamFilter">
+                        <option value="all">Todos los equipos</option>
+                    </select>
+                    <div class="week-nav">
+                        <button class="week-btn" id="prevWeekBtn"><ion-icon name="chevron-back-outline"></ion-icon></button>
+                        <span class="week-label" id="weekLabel">Semana 1</span>
+                        <button class="week-btn" id="nextWeekBtn"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Matches Banner (shown when there are live matches) -->
+            <div class="live-banner fade-in" id="liveBanner" style="display:none;">
+                <ion-icon name="radio-outline"></ion-icon>
+                <span>Hay partidas <strong>EN DIRECTO</strong> ahora mismo</span>
+                <span class="live-pulse"></span>
+            </div>
+
+            <div class="calendar-list fade-in" style="--delay: 0.1s" id="calendarList">
+                <!-- Populated by JS -->
+            </div>
+
+            <div class="calendar-empty" id="calendarEmpty" style="display:none;">
+                <ion-icon name="calendar-outline"></ion-icon>
+                <p>No hay partidas programadas para esta semana.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="assets/logos/meridian-logo.png" alt="Meridian Logo" class="footer-logo-img">
+                MERIDIAN
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-contact">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <a href="mailto:meridian@ivexy.com">meridian@ivexy.com</a>
+                </div>
+                
+                <div class="footer-copyright">
+                    <p>Copyright &copy; 2026 Meridian</p>
+                    <p class="text-muted">Perteneciente al grupo Ivexy &copy;</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="contenders.js"></script>
+</body>
+</html>

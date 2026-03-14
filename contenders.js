@@ -7,12 +7,12 @@
 // DEMO DATA — Replace / augment with real data from admin panel
 // ============================================================
 const SUBCAT_DATA = {
-    category: "Meridian Cup",
+    category: "Meridian Contenders",
     game: "CS:GO",          // "CS:GO" | "LoL" | "Valorant"
     format: "BO3",
-    status: "live",         // "live" | "upcoming" | "completed"
-    logoSrc: "assets/logos/meridian-cup.png",
-    description: "El nivel más alto del circuito Meridian donde los mejores equipos compiten por el título principal.",
+    status: "upcoming",         // "live" | "upcoming" | "completed"
+    logoSrc: "assets/logos/meridian-contenders.png",
+    description: "Nivel competitivo intermedio donde los equipos más fuertes compiten para demostrar su valía y ascender en el circuito.",
 
     teams: [
         { id: 1, name: "Eclipse Gaming",     tag: "EG",  icon: "🌑" },
